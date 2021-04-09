@@ -50,7 +50,7 @@ export default {
             breeds:'',
             selectedBreed: '',
             imgBreeds:'',
-            allBreeeds: 'https://dog.ceo/api/breeds/list',
+            allBreeds: 'https://dog.ceo/api/breeds/list',
             randomDog: `https://dog.ceo/api/breeds/image/random`,
         }
     },
@@ -73,12 +73,12 @@ export default {
             console.log(error);
             });
         },
-        
+
         /**
          * This function will take one random picture from the selected breed
         */
         selectBreed(item) {
-           //this simple if/else condition will slect the dog img
+           //this simple if/else condition will select the dog img
             if (!item) {
                 // the first condition just select a random img when the user press the random element in breedsCategories div
                 fetch(this.randomDog)
@@ -93,8 +93,8 @@ export default {
                 });
             } else {
                 /**
-                 * the else select a specfic breed img when the user select one breed from the elements in breedsCategories div
-                 * now the argument will help us to salect the correct breed the user selected before
+                 * the else select a specific breed img when the user select one breed from the elements in breedsCategories div
+                 * now the argument will help us to select the correct breed the user selected before
                  */
                 fetch(`https://dog.ceo/api/breed/${item}/images/random`)
                 .then(response => response.json())
@@ -106,7 +106,7 @@ export default {
                 .catch(error => {
                     console.log(error);
                 });
-            };
+            }
         },
     },
     mounted() {
